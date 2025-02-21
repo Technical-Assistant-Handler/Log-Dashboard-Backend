@@ -41,7 +41,7 @@ def user_authentication(tpnumber, password):
 def append_logout_time(tpnumber):
     # Use credentials to create a client to interact with the Google Drive API
     scope = config.SCOPE
-    creds = ServiceAccountCredentials.from_json_keyfile_name(config.CREDENTIALS_PATH, scope)
+    creds = ServiceAccountCredentials.from_json_keyfile_dict(config.CREDENTIALS_DICT, config.SCOPE)
     client = gspread.authorize(creds)
 
     # Open the Google Sheet
