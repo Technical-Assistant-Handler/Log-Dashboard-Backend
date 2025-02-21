@@ -11,7 +11,7 @@ if CLOUD_CREDENTIALS:
 else:
     CREDENTIALS_DICT = None  # Handle missing credentials
   
-IP_ADDRESS = "127.0.0.1"
+IP_ADDRESS = "0.0.0.0"
 
 # Google Sheet name
 SHEET_NAME = "Technical Assistant Login Data"
