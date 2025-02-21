@@ -8,7 +8,8 @@ import config
 def update_password(tpnumber, new_password):
     # Use credentials to create a client to interact with the Google Drive API
     scope = config.SCOPE
-    creds = ServiceAccountCredentials.from_json_keyfile_name(config.CREDENTIALS_PATH, scope)
+    creds = ServiceAccountCredentials.from_json_keyfile_dict(config.CREDENTIALS_DICT, config.SCOPE)
+
     client = gspread.authorize(creds)
 
     # Open the Google Sheet
