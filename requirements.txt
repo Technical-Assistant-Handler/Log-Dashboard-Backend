@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+gspread
+oauth2client
+python-dotenv
+smtplib
+email
+logging
+datetime
+random
