@@ -4,7 +4,7 @@ import logging
 import os
 from dotenv import load_dotenv
 from authentication import append_logout_time, user_authentication
-from backend import config
+import config
 from update_password import update_password
 from send_otp_mail import generate_otp_code, mail_design, send_email
 from get_user_data import get_user_log_data, verify_tpnumber
