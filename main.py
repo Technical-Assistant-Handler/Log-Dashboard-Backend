@@ -10,7 +10,7 @@ from send_otp_mail import generate_otp_code, mail_design, send_email
 from get_user_data import get_user_log_data, verify_tpnumber
 
 # Load environment variables from .env file in the backend folder
-load_dotenv(dotenv_path=os.path.join(os.path.dirname(__file__), ".env"))
+load_dotenv()
 
 app = FastAPI()
 
