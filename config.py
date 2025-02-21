@@ -13,4 +13,3 @@ SCOPE = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/au
 
 # Email credentials
 SENDER_EMAIL = "technicalassistantshandler@gmail.com"
-EMAIL_PASSWORD = "kgye mnsy vfky onhu"
