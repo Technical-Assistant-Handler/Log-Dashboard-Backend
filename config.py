@@ -2,7 +2,15 @@
 
 # Path to Google Cloud credentials
 import os
-CREDENTIALS_PATH = os.path.abspath("C:/Users/Fadhi Safeer/OneDrive/Documents/Internship/Technical Assistant Dashboard/dashboard/backend/cloud_credentials.json")
+# Load Google Cloud credentials from environment variable (use the exact name from Render)
+CLOUD_CREDENTIALS = os.getenv("CLOUD_CREDENTIALS")
+
+# Convert JSON string to dictionary
+if CLOUD_CREDENTIALS:
+    CREDENTIALS_DICT = json.loads(CLOUD_CREDENTIALS)  # Use this in your code
+else:
+    CREDENTIALS_DICT = None  # Handle missing credentials
+  
 IP_ADDRESS = "127.0.0.1"
 
 # Google Sheet name
@@ -13,3 +21,5 @@ SCOPE = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/au
 
 # Email credentials
 SENDER_EMAIL = "technicalassistantshandler@gmail.com"
+
+
