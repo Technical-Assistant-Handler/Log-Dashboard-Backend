@@ -1,6 +1,7 @@
 # Configuration variables
 
 # Path to Google Cloud credentials
+import json
 import os
 # Load Google Cloud credentials from environment variable (use the exact name from Render)
 CLOUD_CREDENTIALS = os.getenv("CLOUD_CREDENTIALS")
