@@ -17,7 +17,7 @@ except json.JSONDecodeError:
     print("Error: Invalid JSON format in cloud_credentials.json")
     CREDENTIALS_DICT = None
   
-IP_ADDRESS = "10.101.36.155"
+IP_ADDRESS = "0.0.0.0"
 
 # Google Sheet name
 SHEET_NAME = "Technical Assistant Login Data"
