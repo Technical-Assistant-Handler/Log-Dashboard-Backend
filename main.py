@@ -66,6 +66,7 @@ async def logout(request: Request):
 @app.get("/user_log_data")
 def read_user_log_data():
     try:
+        
         return get_user_log_data()
     except HTTPException as e:
         logger.error(f"Error handling request: {e.detail}")  # ✅ Use `logger.error`
