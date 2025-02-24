@@ -1,3 +1,4 @@
+import subprocess
 from fastapi import FastAPI, Request, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 import logging
@@ -117,6 +118,21 @@ async def update_password_endpoint(request: Request):
 def read_root():
     return {"message": "Welcome to backend!"}
 
+def kill_process_on_port(port):
+    try:
+        result = subprocess.check_output(f'netstat -ano | findstr :{port}', shell=True).decode()
+        lines = result.strip().split("\n")
+        for line in lines:
+            parts = line.split()
+            if len(parts) >= 5:
+                pid = parts[-1]  # Process ID
+                os.system(f"taskkill /PID {pid} /F")
+                print(f"Killed process {pid} on port {port}")
+    except subprocess.CalledProcessError:
+        print(f"No process found on port {port}")
+
+
 if __name__ == "__main__":
+    kill_process_on_port(8000) 
     import uvicorn
     uvicorn.run(app, host=ip_address, port=8000)
