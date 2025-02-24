@@ -10,7 +10,7 @@ import config
 
 # Email credentials
 SENDER_EMAIL = config.SENDER_EMAIL
-EMAIL_PASSWORD = os.getenv("EMAIL_PASSWORD")
+EMAIL_PASSWORD = config.EMAIL_PASSWORD
 
 # Initialize FastAPI app
 app = FastAPI()
