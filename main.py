@@ -33,7 +33,7 @@ logger = logging.getLogger(__name__)
 @app.post("/authenticate")
 async def authenticate(request: Request):
     data = await request.json()
-    logger.info(f"Received authentication request: {data}")
+    #logger.info(f"Received authentication request: {data}")
     input_tpnumber = data.get("tpnumber")
     input_password = data.get("password")
 
