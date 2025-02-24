@@ -37,7 +37,16 @@ def get_user_log_data():
                 "login_time": login_time
             })
 
-    return matched_users if matched_users else [{"message": "User not found or already logged out", "status": False}]
+    return {
+    "message": "User found",
+    "data": matched_users,
+    "status": True
+} if matched_users else {
+    "message": "User not found or already logged out",
+    "status": False,
+    "data": []
+}
+
 
 def verify_tpnumber(tpnumber):
     # Use credentials to create a client to interact with the Google Drive API
