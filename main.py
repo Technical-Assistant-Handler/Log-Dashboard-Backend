@@ -14,9 +14,10 @@ load_dotenv()
 
 app = FastAPI()
 
+ip_address = config.IP_ADDRESS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[os.getenv("ALLOWED_ORIGINS", "*")],
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -26,7 +27,7 @@ app.add_middleware(
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-ip_address = config.IP_ADDRESS
+
 
 @app.post("/authenticate")
 async def authenticate(request: Request):
