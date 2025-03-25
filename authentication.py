@@ -22,7 +22,7 @@ def user_authentication(tpnumber, password):
     sheet1 = sheet.get_worksheet(0)
     data = sheet1.get_all_records()
 
-    logging.info(f"Data: {data}")
+    #logging.info(f"Data: {data}")
     # Check if tpnumber and password are present
     for row in data:
         if str(row['TP Number']).strip() == str(tpnumber).strip() and str(row['Password']).strip() == str(password).strip():
