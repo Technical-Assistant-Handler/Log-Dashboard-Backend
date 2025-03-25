@@ -1,4 +1,5 @@
 import subprocess
+import webbrowser
 from fastapi import FastAPI, Request, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 import logging
@@ -133,6 +134,9 @@ def kill_process_on_port(port):
 
 
 if __name__ == "__main__":
-    kill_process_on_port(8000) 
-    import uvicorn
+    kill_process_on_port(8000)
+    import uvicorn 
     uvicorn.run(app, host=ip_address, port=8000)
+    
+
+    
