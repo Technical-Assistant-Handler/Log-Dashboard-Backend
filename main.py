@@ -135,6 +135,7 @@ def kill_process_on_port(port):
 
 if __name__ == "__main__":
     kill_process_on_port(8000)
+    webbrowser.open_new_tab(f"https://technical-assistant-handler.github.io/flutter-web-app/")
     import uvicorn 
     uvicorn.run(app, host=ip_address, port=8000)
     
